@@ -4,8 +4,8 @@ class Solution {
         boolean[]visited=new boolean[rooms.size()];
         visited[start]=true;
         visitRoom(rooms,visited,start);
-        for(boolean manish:visited){
-            if(!manish) return false;
+        for(boolean neighbour:visited){
+            if(!neighbour) return false;
         }
         return true;
     }
