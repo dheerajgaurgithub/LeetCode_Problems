@@ -1,21 +1,19 @@
 
 class Solution {
     public int findClosestNumber(int[] nums) {
-        PriorityQueue<Integer> pq = new PriorityQueue<>(
-            (a, b) -> {
-                int absA = Math.abs(a);
-                int absB = Math.abs(b);
-                if (absA != absB) {
-                    return absA - absB; // smaller absolute value first
-                } else {
-                    return b - a; // larger number first if same abs value
-                }
-            }
-        );
+    Arrays.sort(nums); 
+    int closest = nums[0];
 
-        for (int num : nums) {
-            pq.offer(num);
+    for (int i = 1; i < nums.length; i++) {
+        int current = nums[i];
+
+        if (Math.abs(current) < Math.abs(closest)) {
+            closest = current;
+        } else if (Math.abs(current) == Math.abs(closest)) {
+            closest = Math.max(closest, current);
         }
-        return pq.peek(); 
+    }
+
+    return closest;
     }
 }
