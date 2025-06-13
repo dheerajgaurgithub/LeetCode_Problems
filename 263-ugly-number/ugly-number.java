@@ -1,7 +1,6 @@
 class Solution {
     public boolean isUgly(int n) {
-        
-       if (n <= 0) {
+        if (n <= 0) {
             return false;
         }
 
@@ -16,5 +15,6 @@ class Solution {
         }
 
         return n == 1;
+        
     }
 }
