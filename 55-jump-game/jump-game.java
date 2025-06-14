@@ -10,6 +10,6 @@ class Solution {
             count = Math.max(count, nums[i]); 
         }
 
-        return true; 
+        return true;
     }
 }
